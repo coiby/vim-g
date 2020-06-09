@@ -70,6 +70,7 @@ fun! s:goo(ft, ...)
 
   let query = substitute(join(words, " "), '^\s*\(.\{-}\)\s*$', '\1', '')
   let query = substitute(query, '"', '\\"', 'g')
+  let query = substitute(query, '`', '\\`', 'g')
 
   if has('win32')
     " Target command: start "" "<url>"
